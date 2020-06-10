@@ -1,6 +1,5 @@
 import React from 'react';
 import {BrowserRouter as Router} from "react-router-dom";
-import Header from "./component/Header";
 import PageRouter from "./PageRouter";
 import Footer from "./component/Footer";
 
@@ -11,7 +10,6 @@ function App() {
   return (
     <div>
       <Router>
-        <Header />
         <PageRouter />
         <Footer />
       </Router>

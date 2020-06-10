@@ -18,10 +18,17 @@ const NavLink = styled(Link)`
   }
 `;
 
-function Header() {
+const MainNavbar = styled(Navbar)`
+  background-color: #fff;
+  box-shadow: 0 0 2px #ccc;
+`;
+
+function Header(props) {
+  const style = props.sticky ? {position: 'sticky', top: 0} : {};
+
   return (
-    <header>
-      <Navbar expand="lg">
+    <header style={style}>
+      <MainNavbar expand="lg">
         <Container>
           <Navbar.Brand href="/">
             <Logo size="small" />
@@ -35,7 +42,7 @@ function Header() {
             </Nav>
           </Navbar.Collapse>
         </Container>
-      </Navbar>
+      </MainNavbar>
     </header>
   );
 }
