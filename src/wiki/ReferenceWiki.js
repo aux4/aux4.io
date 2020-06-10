@@ -17,7 +17,7 @@ const text = `
 1. [Security](#security)
     1. [Advanced](#advanced)
 1. [Real World Usage](#real-world-usage)
-    1. [Definity Website](#definity-website)
+    1. [aux4 website](#aux4-website)
 1. [Upgrade](#upgrade)
 1. [GitHub](#github)
 1. [Bugs and Features](#bugs-and-features)
@@ -395,9 +395,9 @@ $ aux4 $ encrypt passowrd
 
 # Real World Usage
 
-## Definity Website
+## aux4 website
 
-The Definity Website uses the **aux4** to deploy the website in the GitHub Pages.
+The aux4 website uses the **aux4** to deploy the website in the GitHub Pages.
 
 This script is responsible for clone the static website repository, merge the changes push it again to the repository and them remove the temporary directory.
 
@@ -419,7 +419,7 @@ This script is responsible for clone the static website repository, merge the ch
               {
                 "name": "directory",
                 "text": "Temporary directory to clone the website repository",
-                "default": "~/.definity-website"
+                "default": "~/.aux4.io"
               }
             ]
           }
@@ -428,7 +428,7 @@ This script is responsible for clone the static website repository, merge the ch
           "value": "deploy",
           "execute": [
             "mkdir $directory",
-            "git clone https://github.com/DefinityLabs/definitylabs.github.io.git $directory",
+            "git clone https://github.com/aux4/aux4.github.io.git $directory",
             "rm -rf \${directory}/static",
             "rm -rf build",
             "npm run build",
@@ -445,7 +445,7 @@ This script is responsible for clone the static website repository, merge the ch
               {
                 "name": "directory",
                 "text": "Temporary directory to clone the website repository",
-                "default": "~/.definity-website"
+                "default": "~/.aux4.io"
               },
               {
                 "name": "message",
