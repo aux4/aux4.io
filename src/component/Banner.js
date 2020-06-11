@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Logo from "./Logo";
 
-const HomeBanner = styled.div`
+const BlackBanner = styled.div`
   height: 500px;
   vertical-align: middle;
   background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAH0lEQVQYV2NkQAX/GZH4/xkYGBhhAmAOSBJEwDkgAQCCrgQEjpMcPgAAAABJRU5ErkJggg==') repeat #3d464f;
@@ -21,12 +21,12 @@ const Subtitle = styled.h2`
 
 function Banner() {
   return (
-    <HomeBanner>
+    <BlackBanner>
       <div>
         <Logo white />
         <Subtitle>high-level scripts</Subtitle>
       </div>
-    </HomeBanner>
+    </BlackBanner>
   );
 }
 
