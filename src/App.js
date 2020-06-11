@@ -5,11 +5,13 @@ import Footer from "./component/Footer";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import ScrollToTop from "./effect/ScrollToTop";
 
 function App() {
   return (
     <div>
       <Router basename={process.env.PUBLIC_URL}>
+        <ScrollToTop />
         <PageRouter />
         <Footer />
       </Router>
