@@ -16,8 +16,6 @@ const text = `
 1. [Help](#help)
 1. [Security](#security)
     1. [Advanced](#advanced)
-1. [Real World Usage](#real-world-usage)
-    1. [aux4 website](#aux4-website)
 1. [Upgrade](#upgrade)
 1. [GitHub](#github)
 1. [Bugs and Features](#bugs-and-features)
@@ -391,74 +389,6 @@ It is recommended define a token in a system variable, in order to protect the g
 export AUX4_SECURITY_KEY=C1E111867141295954C8DF64426FF
 $ aux4 $ encrypt passowrd
 2b146e0b0b67b9c0
-\`\`\`
-
-# Real World Usage
-
-## aux4 website
-
-The aux4 website uses the **aux4** to deploy the website in the GitHub Pages.
-
-This script is responsible for clone the static website repository, merge the changes push it again to the repository and them remove the temporary directory.
-
-\`\`\`json
-{
-  "profiles": [
-    {
-      "name": "main",
-      "commands": [
-        {
-          "value": "clean",
-          "execute": [
-            "rm -rf $directory",
-            "log:Directory was removed successfully"
-          ],
-          "help": {
-            "description": "Clean the temporary deploy directory",
-            "variables": [
-              {
-                "name": "directory",
-                "text": "Temporary directory to clone the website repository",
-                "default": "~/.aux4.io"
-              }
-            ]
-          }
-        },
-        {
-          "value": "deploy",
-          "execute": [
-            "mkdir $directory",
-            "git clone https://github.com/aux4/aux4.github.io.git $directory",
-            "rm -rf \${directory}/static",
-            "rm -rf build",
-            "npm run build",
-            "cp -r build/* \${directory}/",
-            "git --git-dir \${directory}/.git --work-tree \${directory} add \${directory}/.",
-            "git --git-dir \${directory}/.git --work-tree \${directory} commit -m '\${message}'",
-            "git --git-dir \${directory}/.git --work-tree \${directory} push",
-            "rm -rf $directory",
-            "log:The website was deployed successfully"
-          ],
-          "help": {
-            "description": "Deploy the current version of website to the github pages",
-            "variables": [
-              {
-                "name": "directory",
-                "text": "Temporary directory to clone the website repository",
-                "default": "~/.aux4.io"
-              },
-              {
-                "name": "message",
-                "text": "Commit Message",
-                "default": "Website Changes"
-              }
-            ]
-          }
-        }
-      ]
-    }
-  ]
-}
 \`\`\`
 
 # Upgrade

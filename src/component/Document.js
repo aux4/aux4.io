@@ -5,19 +5,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { faLink } from '@fortawesome/free-solid-svg-icons';
-
-const H1 = styled.h1`
-  font-weight: 300;
-  margin-top: 30px;
-`;
-const H2 = styled.h2`
-  font-weight: 300;
-  margin-top: 2em;
-`;
-const H3 = styled.h3``;
-const H4 = styled.h4``;
-const H5 = styled.h5``;
-const H6 = styled.h6``;
+import {H1, H2, H3, H4, H5, H6} from "./Heading";
 
 const LinkIcon = styled.a`
   outline: none;
@@ -35,11 +23,11 @@ const Icon = styled(FontAwesomeIcon)`
 
 function Document(props) {
   return (
-    <ReactMarkdown source={props.children} renderers={{code: Code, heading: Heading}} />
+    <ReactMarkdown source={props.children} renderers={{code: CodeRenderer, heading: HeadingRenderer}} />
   );
 }
 
-function Heading(props) {
+function HeadingRenderer(props) {
   const level = props.level;
   const children = props.children;
 
@@ -74,9 +62,9 @@ function Heading(props) {
   }
 }
 
-function Code(props) {
+function CodeRenderer(props) {
   return (
-    <SyntaxHighlighter language={props.language} style={tomorrow} showLineNumbers>{props.value}</SyntaxHighlighter>
+    <SyntaxHighlighter language={props.language} style={tomorrow} customStyle={{margin: "20px 0"}} showLineNumbers>{props.value}</SyntaxHighlighter>
   );
 }
 

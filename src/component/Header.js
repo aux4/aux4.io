@@ -39,6 +39,12 @@ function Header(props) {
               <Nav.Item>
                 <NavLink to="/learn">Learn</NavLink>
               </Nav.Item>
+              <Nav.Item>
+                <NavLink to="/examples">Examples</NavLink>
+              </Nav.Item>
+              <Nav.Item>
+                <NavLink to="/community">Community</NavLink>
+              </Nav.Item>
             </Nav>
           </Navbar.Collapse>
         </Container>

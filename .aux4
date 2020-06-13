@@ -4,6 +4,20 @@
       "name": "main",
       "commands": [
         {
+          "value": "gh-pages",
+          "execute": [
+            "profile:gh-pages"
+          ],
+          "help": {
+            "description": "Github Pages"
+          }
+        }
+      ]
+    },
+    {
+      "name": "gh-pages",
+      "commands": [
+        {
           "value": "clean",
           "execute": [
             "rm -rf $directory",

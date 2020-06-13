@@ -4,6 +4,8 @@ import {title} from "../component/Website";
 import Header from "../component/Header";
 import Banner from "../component/Banner";
 import Section from "../component/Section";
+import {Link} from "react-router-dom";
+import Button from "react-bootstrap/Button";
 
 const SmallContainer = styled.div`
   max-width: 760px;
@@ -26,7 +28,7 @@ function HomePage() {
           </p>
         </SmallContainer>
       </Section>
-      <Section title="Stop wasting time doing repetitive tasks">
+      <Section title="Stop wasting time doing repetitive tasks" gray>
         <SmallContainer>
           <p>
             You are probably doing the same task multiple times in the day, like running few scripts for compiling,
@@ -43,7 +45,7 @@ function HomePage() {
           </p>
         </SmallContainer>
       </Section>
-      <Section title="Get rid of your wiki pages">
+      <Section title="Get rid of your wiki pages" gray>
         <SmallContainer>
           <p>
             Do not write Wiki pages documenting how to use your scripts, aux4 shows very good documentation
@@ -55,6 +57,9 @@ function HomePage() {
         <SmallContainer>
           <p>
             You will figure out how this tool is a game-changer only after you start using it.
+          </p>
+          <p style={{textAlign: 'center'}}>
+            <Button as={Link} variant="success" to="/learn">Getting Started</Button>
           </p>
         </SmallContainer>
       </Section>

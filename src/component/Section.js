@@ -11,7 +11,7 @@ const Banner = styled.div`
   text-align: center;
   font-size: 20px;
   
-  background-color: ${props => props.black ? '#3d464f' : 'transparent'};
+  background-color: ${props => props.black ? '#3d464f' : props.gray ? '#e6e8ec' : 'transparent'};
   color: ${props => props.black ? '#fff' : 'inherit'};
 `;
 
@@ -22,7 +22,7 @@ const Subtitle = styled.h2`
 
 function Section(props) {
   return (
-    <Banner black={props.black}>
+    <Banner black={props.black} gray={props.gray}>
       <div>
         <Subtitle>{props.title}</Subtitle>
         {props.children}
