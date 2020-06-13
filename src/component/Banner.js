@@ -20,7 +20,17 @@ const Subtitle = styled.h2`
 `;
 
 const Block = styled.div`
-  margin: 0 20px; 
+  margin: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Label = styled.div`
+  margin: 10px;
+  padding: 0;
+  font-family: 'Lexend Tera', sans-serif;
+  font-size: 13px;
 `;
 
 const qualities = [
@@ -37,20 +47,12 @@ function Banner() {
   return (
     <BlackBanner>
       <div>
+        <Logo white />
+        <Subtitle>high-level scripts</Subtitle>
         <Block>
-          <Logo white />
-          <Subtitle>high-level scripts</Subtitle>
-        </Block>
-      </div>
-      <div style={{textAlign: 'right'}}>
-        <Block>
-          <Subtitle>free</Subtitle>
-        </Block>
-        <Block>
-          <Subtitle>open source</Subtitle>
-        </Block>
-        <Block>
-          <Subtitle>{word}</Subtitle>
+          <Label>free</Label>
+          <Label>open source</Label>
+          <Label>{word}</Label>
         </Block>
       </div>
     </BlackBanner>
