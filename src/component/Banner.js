@@ -20,7 +20,7 @@ const Subtitle = styled.h2`
 `;
 
 const Block = styled.div`
-  margin: 0 30px; 
+  margin: 0 20px; 
 `;
 
 const qualities = [
