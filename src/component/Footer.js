@@ -6,7 +6,7 @@ import { faGithub, faGitter, faLinkedin, faTwitter, faMedium } from '@fortawesom
 
 const FooterBar = styled.footer`
   margin-top: 50px;
-  padding: 20px;
+  padding: 20px 10px;
   background-color: #3d464f;
   color: #fff;
   border-top: solid 1px #dcdcdc;
@@ -16,7 +16,7 @@ const CopyrightBar = styled.div`
   padding: 0;
   padding-top: 40px;
   font-size: 14px;
-  text-align: center;
+  text-align: left;
   color: rgba(255, 255, 255, 0.4);
 `;
 
@@ -41,23 +41,23 @@ function Footer() {
     <FooterBar>
       <Container>
         <SocialLinks>
-          <Social href="https://github.com/aux4" target="_blank">
+          <Social href="https://github.com/aux4" rel="noopener noreferrer" target="_blank">
             <FontAwesomeIcon icon={faGithub} />
           </Social>
-          <Social href="https://gitter.im/aux4io" target="_blank">
+          <Social href="https://gitter.im/aux4io" rel="noopener noreferrer" target="_blank">
             <FontAwesomeIcon icon={faGitter} />
           </Social>
-          <Social href="https://linkedin.com/aux4" target="_blank">
+          <Social href="https://linkedin.com/aux4" rel="noopener noreferrer" target="_blank">
             <FontAwesomeIcon icon={faLinkedin} />
           </Social>
-          <Social href="https://twitter.com/aux4io" target="_blank">
+          <Social href="https://twitter.com/aux4io" rel="noopener noreferrer" target="_blank">
             <FontAwesomeIcon icon={faTwitter} />
           </Social>
-          <Social href="https://medium.com/aux4" target="_blank">
+          <Social href="https://medium.com/aux4" rel="noopener noreferrer" target="_blank">
             <FontAwesomeIcon icon={faMedium} />
           </Social>
         </SocialLinks>
-        <CopyrightBar>© Copyright {year} aux4. All rights reserved.</CopyrightBar>
+        <CopyrightBar>Made with ♥️ in California. © Copyright {year} aux4. All rights reserved.</CopyrightBar>
       </Container>
     </FooterBar>
   );

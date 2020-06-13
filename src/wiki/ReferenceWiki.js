@@ -1,6 +1,7 @@
 const text = `
 # Contents
 
+1. [Introduction](#introduction)
 1. [Installation](#installation)
 1. [Getting Started](#getting-started)
 1. [Configuration File](#configuration-file)
@@ -20,6 +21,10 @@ const text = `
 1. [GitHub](#github)
 1. [Bugs and Features](#bugs-and-features)
 1. [License](#license)
+
+# Introduction
+
+Aux4 is a CLI (Command-line Interface) generator, used for create high-level scripts and automate your daily tasks.
 
 # Installation
 
@@ -194,10 +199,31 @@ The second one, is using a the prompt to ask the user to fill the value:
 
 \`\`\`bash
 aux4 create-dir
-The directory name: test
+dirname [The directory name]: test
 \`\`\`
 
 In this case, the prompt uses the \`text\` attribute from the variable to ask the user to fill the value.
+
+### Password
+
+For passwords is recommended to use use \`hide\` in the variable.
+
+\`\`\`json
+...
+  {
+    "name": "password",
+    "text": "The password of the user",
+    "hide": true
+  }
+...
+\`\`\`
+
+The characters entered in the prompt are replaced by \`*\`.
+
+\`\`\`bash
+aux4 create-dir
+password [The password of the user]: ********
+\`\`\`
 
 ## Default Value
 
@@ -360,7 +386,8 @@ aux4 --help
 
 # Security
 
-**Aux4** allows the user to encrypt some information in the configuration file.
+**Aux4** allows the user to encrypt some information in the configuration file. It uses \`AES-256-GCM\` encryption 
+from the package [cryptr](https://npmjs.com/package/cryptr).
 
 To encrypt the some value:
 
@@ -387,7 +414,7 @@ It is recommended define a token in a system variable, in order to protect the g
 
 \`\`\`bash
 export AUX4_SECURITY_KEY=C1E111867141295954C8DF64426FF
-$ aux4 $ encrypt passowrd
+aux4 aux4 encrypt passowrd
 2b146e0b0b67b9c0
 \`\`\`
 

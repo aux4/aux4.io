@@ -19,12 +19,39 @@ const Subtitle = styled.h2`
   font-size: 15px;
 `;
 
+const Block = styled.div`
+  margin: 0 30px; 
+`;
+
+const qualities = [
+  'awesome',
+  'addictive',
+  'amazing',
+  'unique',
+  'reliable'
+];
+
 function Banner() {
+  const word = qualities[Math.floor(Math.random() * qualities.length)];
+
   return (
     <BlackBanner>
       <div>
-        <Logo white />
-        <Subtitle>high-level scripts</Subtitle>
+        <Block>
+          <Logo white />
+          <Subtitle>high-level scripts</Subtitle>
+        </Block>
+      </div>
+      <div style={{textAlign: 'right'}}>
+        <Block>
+          <Subtitle>free</Subtitle>
+        </Block>
+        <Block>
+          <Subtitle>open source</Subtitle>
+        </Block>
+        <Block>
+          <Subtitle>{word}</Subtitle>
+        </Block>
       </div>
     </BlackBanner>
   );

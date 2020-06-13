@@ -45,6 +45,9 @@ function Header(props) {
               <Nav.Item>
                 <NavLink to="/community">Community</NavLink>
               </Nav.Item>
+              <Nav.Item>
+                <NavLink to="/help">Help</NavLink>
+              </Nav.Item>
             </Nav>
           </Navbar.Collapse>
         </Container>

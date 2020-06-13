@@ -4,6 +4,7 @@ import HomePage from "./page/HomePage";
 import LearnPage from "./page/LearnPage";
 import CommunityPage from "./page/CommunityPage";
 import ExamplesPage from "./page/ExamplesPage";
+import HelpPage from "./page/HelpPage";
 
 function PageRouter() {
   return (
@@ -16,6 +17,9 @@ function PageRouter() {
       </Route>
       <Route path="/examples">
         <ExamplesPage />
+      </Route>
+      <Route path="/help">
+        <HelpPage />
       </Route>
       <Route path="/">
         <HomePage />
