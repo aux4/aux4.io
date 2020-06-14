@@ -443,9 +443,24 @@ The advantage to use packaging is that you can use your script from any director
 
 \`\`\`bash
 aux4 aux4 install my-package.aux4
+
+# or
+
+cat my-package.aux4 | aux4 aux4 install
+
+# or
+
+curl http://mywebsite.com/my-package.aux4 | aux4 aux4 install
 \`\`\`
 
 It will copy the file to the directory \`~/.aux4.config/packages\`.
+
+### List all the installed packages
+
+\`\`\`
+aux4 aux4 packages
+- my-pack 1.0.0
+\`\`\`
 
 ### Uninstalling a package
 
