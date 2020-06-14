@@ -17,6 +17,9 @@ const text = `
 1. [Help](#help)
 1. [Security](#security)
     1. [Advanced](#advanced)
+1. [Package](#package)
+    1. [Installing a package](#installing-a-package)
+    1. [Uninstalling a package](#uninstalling-a-package)
 1. [Upgrade](#upgrade)
 1. [GitHub](#github)
 1. [Bugs and Features](#bugs-and-features)
@@ -417,6 +420,40 @@ export AUX4_SECURITY_KEY=C1E111867141295954C8DF64426FF
 aux4 aux4 encrypt passowrd
 2b146e0b0b67b9c0
 \`\`\`
+
+# Package
+
+Packaging is the best way to share your script with your team. The name of the file can be \`my-package.json\` or \`my-package.aux4\`. 
+
+The advantage to use packaging is that you can use your script from any directory.
+
+\`\`\`json
+{
+  "package": {
+    "name": "my-package",
+    "version": "1.0.0"
+  },
+  "profiles": [
+    ...
+  ]
+}
+\`\`\`
+
+### Installing a package
+
+\`\`\`bash
+aux4 aux4 install my-package.aux4
+\`\`\`
+
+It will copy the file to the directory \`~/.aux4.config/packages\`.
+
+### Uninstalling a package
+
+\`\`\`bash
+aux4 aux4 uninstall my-package
+\`\`\`
+
+It will remove the file from the directory \`~/.aux4.config/packages\`.
 
 # Upgrade
 

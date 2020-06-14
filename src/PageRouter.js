@@ -1,31 +1,51 @@
-import React from "react";
+import React, {Suspense} from "react";
 import {Route, Switch} from "react-router-dom";
-import HomePage from "./page/HomePage";
-import LearnPage from "./page/LearnPage";
-import CommunityPage from "./page/CommunityPage";
-import ExamplesPage from "./page/ExamplesPage";
-import HelpPage from "./page/HelpPage";
+import Header from "./component/Header";
+import Page from "./component/Page";
 
-function PageRouter() {
+const HomePage = React.lazy(() => import("./page/HomePage"));
+const LearnPage = React.lazy(() => import("./page/LearnPage"));
+const CommunityPage = React.lazy(() => import("./page/CommunityPage"));
+const ExamplesPage = React.lazy(() => import("./page/ExamplesPage"));
+const HelpPage = React.lazy(() => import("./page/HelpPage"));
+
+export default function PageRouter() {
   return (
     <Switch>
       <Route path="/learn">
-        <LearnPage />
+        <Suspense fallback={<Loading />}>
+          <LearnPage />
+        </Suspense>
       </Route>
       <Route path="/community">
-        <CommunityPage />
+        <Suspense fallback={<Loading />}>
+          <CommunityPage />
+        </Suspense>
       </Route>
       <Route path="/examples">
-        <ExamplesPage />
+        <Suspense fallback={<Loading />}>
+          <ExamplesPage />
+        </Suspense>
       </Route>
       <Route path="/help">
-        <HelpPage />
+        <Suspense fallback={<Loading />}>
+          <HelpPage />
+        </Suspense>
       </Route>
       <Route path="/">
-        <HomePage />
+        <Suspense fallback={<Loading />}>
+          <HomePage />
+        </Suspense>
       </Route>
     </Switch>
   );
 }
 
-export default PageRouter;
+function Loading() {
+  return (
+    <div>
+      <Header />
+      <Page title="Loading..." />
+    </div>
+  );
+}
