@@ -448,9 +448,9 @@ aux4 aux4 install my-package.aux4
 
 cat my-package.aux4 | aux4 aux4 install
 
-# or
+# or you can import from URL using curl -s
 
-curl http://mywebsite.com/my-package.aux4 | aux4 aux4 install
+curl http://mywebsite.com/my-package.aux4 -s | aux4 aux4 install
 \`\`\`
 
 It will copy the file to the directory \`~/.aux4.config/packages\`.
